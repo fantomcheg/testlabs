@@ -50,6 +50,8 @@ RUN chmod +x xampp-linux-installer.run && \
 
 # copy supervisor config file to start openssh-server
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN tar -xvf punklabs.tar
+COPY punklabs /opt/lampp/htdocs
 
 VOLUME [ "/var/log/mysql/", "/var/log/apache2/", "/www", "/opt/lampp/apache2/conf.d/" ]
 
